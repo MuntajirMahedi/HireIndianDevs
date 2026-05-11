@@ -103,7 +103,7 @@ export const LeadForm = ({
 
   return (
     <form onSubmit={onSubmit} noValidate className={cn("rounded-lg border border-border bg-card p-6 md:p-8", className)}>
-      <div className={cn("grid", compact ? "gap-4" : "gap-5")}>
+      <div className={cn("grid", compact ? "gap-3.5" : "gap-5")}>
         <div className="grid gap-2">
           <Label htmlFor={`${formId}-name`}>Name</Label>
           <Input
@@ -115,7 +115,7 @@ export const LeadForm = ({
             placeholder="Your full name"
             autoComplete="name"
             disabled={submitting}
-            className={compact ? "h-10" : undefined}
+            className={compact ? "h-10 text-sm" : undefined}
           />
         </div>
         <div className="grid gap-2">
@@ -130,7 +130,7 @@ export const LeadForm = ({
             placeholder="you@company.com"
             autoComplete="email"
             disabled={submitting}
-            className={compact ? "h-10" : undefined}
+            className={compact ? "h-10 text-sm" : undefined}
           />
         </div>
         <div className="grid gap-2">
@@ -143,7 +143,7 @@ export const LeadForm = ({
             placeholder="Company name (optional)"
             autoComplete="organization"
             disabled={submitting}
-            className={compact ? "h-10" : undefined}
+            className={compact ? "h-10 text-sm" : undefined}
           />
         </div>
         <div className="grid gap-2">
@@ -152,7 +152,7 @@ export const LeadForm = ({
             id={`${formId}-message`}
             name="message"
             required
-            rows={compact ? 4 : 5}
+            rows={compact ? 3 : 5}
             value={values.message}
             onChange={(e) => updateValue("message", e.target.value)}
             placeholder="What are you building? Tech stack, timeline, team needs..."
@@ -173,7 +173,11 @@ export const LeadForm = ({
           </div>
         )}
 
-        <Button type="submit" disabled={submitting} className="h-11 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button
+          type="submit"
+          disabled={submitting}
+          className={cn("w-full bg-accent text-accent-foreground hover:bg-accent/90", compact ? "h-10" : "h-11")}
+        >
           {submitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
