@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -13,6 +14,7 @@ const links = [
 export const Nav = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { handleNavClick } = useSmoothScroll();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -38,7 +40,12 @@ export const Nav = () => {
 
           <nav className="hidden items-center gap-6 lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="text-[13px] font-medium text-white/70 transition-all hover:text-white">
+              <a 
+                key={l.href} 
+                href={l.href} 
+                onClick={(e) => handleNavClick(e, l.href)}
+                className="text-[13px] font-medium text-white/70 transition-all hover:text-white"
+              >
                 {l.label}
               </a>
             ))}
@@ -46,7 +53,11 @@ export const Nav = () => {
 
           <div className="flex items-center gap-3">
             <Button asChild className="hidden h-9 rounded-full bg-white px-5 text-[11px] font-bold text-ink hover:bg-white/90 md:inline-flex">
-              <a href="#contact" className="flex items-center gap-2">
+              <a 
+                href="#contact" 
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="flex items-center gap-2"
+              >
                 Start at $25/hr
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-ink text-white">
                   <ArrowUpRight className="h-3 w-3" />
@@ -72,7 +83,10 @@ export const Nav = () => {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  handleNavClick(e, l.href);
+                }}
                 className="rounded-2xl px-4 py-3 text-sm font-medium text-white/70 transition-all active:bg-white/10 active:text-white"
               >
                 {l.label}
@@ -80,7 +94,14 @@ export const Nav = () => {
             ))}
             <div className="mt-2 border-t border-white/5 p-2">
               <Button asChild className="w-full rounded-2xl bg-white px-5 text-[11px] font-bold text-ink hover:bg-white/90">
-                <a href="#contact" onClick={() => setOpen(false)} className="flex items-center justify-center gap-2 py-6">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => {
+                    setOpen(false);
+                    handleNavClick(e, "#contact");
+                  }} 
+                  className="flex items-center justify-center gap-2 py-6"
+                >
                   Start at $25/hr
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>

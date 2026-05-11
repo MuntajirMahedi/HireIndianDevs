@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "./LeadForm";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const proofPoints = [
   "500+ projects delivered",
@@ -17,6 +18,7 @@ const stats = [
 ];
 
 export const Hero = () => {
+  const { handleNavClick } = useSmoothScroll();
   return (
     <section id="top" className="relative overflow-hidden border-b border-border bg-background">
       <div className="container-tight relative py-20 md:py-24 lg:py-24 lg:pt-28">
@@ -42,12 +44,12 @@ export const Hero = () => {
 
             <div className="animate-fade-up [animation-delay:300ms] mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
               <Button asChild size="lg" className="h-12 bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90">
-                <a href="#contact">
+                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                   Build your team from $25/hr <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 border-border px-6 text-base text-ink">
-                <a href="#contact">Discuss your project</a>
+                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Discuss your project</a>
               </Button>
             </div>
 
