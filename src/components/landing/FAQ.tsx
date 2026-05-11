@@ -1,5 +1,4 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SectionHeading } from "./SectionHeading";
 import { ScrollReveal } from "./ScrollReveal";
 
 const faqs = [
@@ -31,19 +30,54 @@ const faqs = [
 ];
 
 export const FAQ = () => (
-  <section id="faq" className="section-y border-b border-border">
-    <ScrollReveal className="container-tight grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
-      <div>
-        <SectionHeading eyebrow="FAQ" title="Answers, not sales pitches." description="Everything you need to know before bringing on a team." />
+  <section id="faq" className="section-y border-b border-border bg-background relative overflow-hidden">
+    {/* Subtle background glow */}
+    <div className="absolute -right-24 top-24 h-96 w-96 rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+
+    <ScrollReveal className="container-tight">
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div className="lg:sticky lg:top-32 lg:h-fit">
+          <div className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent">
+            <span className="h-px w-8 bg-accent" />
+            Support Center
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-ink leading-[1.1] mb-6">
+            Frequently Asked <span className="text-accent italic">Questions</span>
+          </h2>
+          <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-8 max-w-md">
+            Everything you need to know about our developers, hiring process, pricing, and project delivery.
+          </p>
+          <div className="rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm">
+            <p className="text-sm font-semibold text-ink mb-2">Still have questions?</p>
+            <p className="text-sm text-muted-foreground mb-4">Can't find the answer you're looking for? Please chat with our friendly team.</p>
+            <a 
+              href="#contact" 
+              className="inline-flex items-center gap-2 text-sm font-bold text-accent hover:underline"
+            >
+              Contact Support →
+            </a>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map(([q, a], i) => (
+              <AccordionItem 
+                key={i} 
+                value={`item-${i}`} 
+                className="group rounded-2xl border border-border bg-card px-6 transition-all duration-300 hover:border-accent/30 hover:shadow-md data-[state=open]:border-accent/40 data-[state=open]:shadow-lg"
+              >
+                <AccordionTrigger className="py-5 text-left text-[15px] md:text-base font-bold text-ink hover:no-underline transition-colors group-data-[state=open]:text-accent">
+                  {q}
+                </AccordionTrigger>
+                <AccordionContent className="pb-5 text-[14px] md:text-base leading-relaxed text-muted-foreground border-t border-border/50 pt-4">
+                  {a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
-      <Accordion type="single" collapsible className="w-full">
-        {faqs.map(([q, a], i) => (
-          <AccordionItem key={i} value={`item-${i}`} className="border-border">
-            <AccordionTrigger className="text-left text-base font-medium text-ink hover:no-underline">{q}</AccordionTrigger>
-            <AccordionContent className="text-sm leading-relaxed text-muted-foreground md:text-base">{a}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
     </ScrollReveal>
   </section>
 );
