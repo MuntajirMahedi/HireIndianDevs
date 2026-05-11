@@ -4,6 +4,7 @@ export interface ContactEmailPayload {
   name: string;
   email: string;
   company: string;
+  service: string;
   message: string;
   time: string;
 }
@@ -28,6 +29,7 @@ export const sendContactEmails = async (payload: ContactEmailPayload) => {
     name: payload.name,
     email: payload.email,
     company: payload.company,
+    service: payload.service,
     message: payload.message,
     time: payload.time,
   };

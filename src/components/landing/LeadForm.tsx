@@ -7,6 +7,28 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { getEmailErrorMessage, sendContactEmails } from "@/lib/emailService";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const services = [
+  "Web Development",
+  "SaaS Development",
+  "Enterprise Software",
+  "eCommerce Development",
+  "Mobile App Development",
+  "UI/UX Design",
+  "API Integration",
+  "CRM/ERP Systems",
+  "AI Solutions",
+  "Custom Software Development",
+  "Maintenance & Support",
+  "Other",
+];
 
 interface LeadFormProps {
   className?: string;
@@ -20,6 +42,7 @@ interface LeadFormValues {
   name: string;
   email: string;
   company: string;
+  service: string;
   message: string;
 }
 
@@ -27,6 +50,7 @@ const initialValues: LeadFormValues = {
   name: "",
   email: "",
   company: "",
+  service: "",
   message: "",
 };
 
@@ -36,6 +60,7 @@ const validateForm = (values: LeadFormValues) => {
   if (!values.name) return "Please enter your name.";
   if (!values.email) return "Please enter your work email.";
   if (!emailPattern.test(values.email)) return "Please enter a valid email address.";
+  if (!values.service) return "Please select a service.";
   if (!values.message) return "Please share a short project brief.";
   return "";
 };
@@ -64,6 +89,7 @@ export const LeadForm = ({
       name: values.name.trim(),
       email: values.email.trim(),
       company: values.company.trim(),
+      service: values.service,
       message: values.message.trim(),
     };
 
@@ -145,6 +171,32 @@ export const LeadForm = ({
             disabled={submitting}
             className={compact ? "h-10 text-sm" : undefined}
           />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor={`${formId}-service`}>Service Required</Label>
+          <Select
+            value={values.service}
+            onValueChange={(value) => updateValue("service", value)}
+            disabled={submitting}
+          >
+            <SelectTrigger
+              id={`${formId}-service`}
+              className={cn(
+                "w-full bg-background border-border",
+                compact ? "h-10 text-sm" : "h-11",
+                !values.service && "text-muted-foreground"
+              )}
+            >
+              <SelectValue placeholder="Select a service" />
+            </SelectTrigger>
+            <SelectContent className="bg-card border-border">
+              {services.map((service) => (
+                <SelectItem key={service} value={service} className="focus:bg-accent focus:text-accent-foreground cursor-pointer">
+                  {service}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
         <div className="grid gap-2">
           <Label htmlFor={`${formId}-message`}>Project brief</Label>
