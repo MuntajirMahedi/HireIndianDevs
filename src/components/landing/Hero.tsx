@@ -60,19 +60,6 @@ export const Hero = () => {
               ))}
             </ul>
 
-            <div className="animate-fade-up [animation-delay:500ms] mx-auto mt-10 flex w-full max-w-[600px] justify-center lg:translate-x-4 xl:translate-x-6">
-              <div className="grid w-full grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-4">
-                {stats.map((s) => (
-                  <div key={s.v} className="flex min-h-[88px] min-w-0 flex-col items-center justify-center bg-card px-4 py-4 text-center">
-                    <div className="flex items-center justify-center gap-1 text-2xl font-bold tracking-tight text-ink md:text-[1.7rem]">
-                      {s.k}
-                      {s.icon && <Star className="h-5 w-5 fill-accent text-accent" />}
-                    </div>
-                    <div className="mt-1 text-xs uppercase tracking-[0.12em] text-muted-foreground">{s.v}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="animate-fade-up [animation-delay:450ms] mx-auto w-full max-w-xl lg:mx-0 lg:pt-2">
@@ -93,6 +80,22 @@ export const Hero = () => {
                   trustText="NDA Protected - Response within 24-72 hours - No spam"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="animate-fade-up [animation-delay:600ms] mt-16 flex w-full justify-center">
+          <div className="w-full max-w-4xl px-4 md:px-0">
+            <div className="grid w-full grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.v} className="flex min-h-[100px] min-w-0 flex-col items-center justify-center bg-card px-4 py-4 text-center transition-all duration-300 hover:bg-card/50">
+                  <div className="flex items-center justify-center gap-1 text-2xl font-bold tracking-tight text-ink md:text-[1.85rem]">
+                    {s.k}
+                    {s.icon && <Star className="h-5 w-5 fill-accent text-accent" />}
+                  </div>
+                  <div className="mt-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground">{s.v}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
