@@ -7,7 +7,7 @@ export const Footer = () => (
         </span>
         <span className="text-sm">HireIndianDevs</span>
       </div>
-      
+
       <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] font-medium text-muted-foreground">
         <a href="#services" className="transition-colors hover:text-ink">Services</a>
         <a href="#pricing" className="transition-colors hover:text-ink">Pricing</a>
@@ -19,7 +19,7 @@ export const Footer = () => (
       </nav>
 
       <div className="text-[11px] font-medium text-muted-foreground/80 whitespace-nowrap">
-        © {new Date().getFullYear()} HireIndianDevs. All rights reserved.
+        © {new Date().getFullYear()} HireIndianDevelopers. All rights reserved.
       </div>
     </div>
   </footer>
