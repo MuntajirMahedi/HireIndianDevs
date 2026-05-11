@@ -1,29 +1,29 @@
 import { Check, Sparkles } from "lucide-react";
-import { SectionHeading } from "./SectionHeading";
 import { Button } from "@/components/ui/button";
+import { SectionHeading } from "./SectionHeading";
 import { ScrollReveal } from "./ScrollReveal";
 
 const cols = [
-  { region: "United States", rate: "From $80", per: "per hour", note: "Avg. senior engineer", highlight: false },
-  { region: "United Kingdom", rate: "From $70", per: "per hour", note: "Avg. senior engineer", highlight: false },
-  { region: "India · Our team", rate: "From $25", per: "per hour", note: "Senior engineers, starting rate", highlight: true },
+  { region: "United States", rate: "$80-$150", per: "per hour", note: "Typical senior developer market range", highlight: false },
+  { region: "United Kingdom", rate: "$70-$120", per: "per hour", note: "Typical senior developer market range", highlight: false },
+  { region: "India - Our team", rate: "$25", per: "per hour", note: "Transparent rate for experienced engineers", highlight: true },
 ];
 
 const features = [
-  "Senior product engineers",
-  "Daily updates & sprint cadence",
+  "Mid to senior product engineers",
+  "Daily updates and sprint cadence",
   "100% IP ownership",
-  "NDA & secure delivery",
-  "Flexible hourly or dedicated",
+  "NDA and secure delivery",
+  "Flexible hourly or dedicated hiring",
 ];
 
 export const PricingComparison = () => (
   <section id="pricing" className="section-y border-b border-border bg-background">
     <ScrollReveal className="container-tight">
       <SectionHeading
-        eyebrow="The $25 per Hour Advantage"
-        title="Build faster, scale smarter."
-        description="One of the biggest reasons companies hire Indian developers is the cost advantage without sacrificing quality. Invest more into growth while maintaining a high engineering standard."
+        eyebrow="The $25 Per Hour Advantage"
+        title="Build faster, scale smarter, and keep more budget for growth."
+        description="One of the biggest reasons companies hire Indian developers is the cost advantage without sacrificing quality. This is cost efficiency from India's operating model, not lower engineering standards."
       />
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -41,22 +41,14 @@ export const PricingComparison = () => (
                 <Sparkles className="h-3 w-3" /> Best value
               </div>
             )}
-            <div
-              className={`text-xs font-semibold uppercase tracking-[0.14em] ${
-                c.highlight ? "text-accent" : "text-muted-foreground"
-              }`}
-            >
+            <div className={`text-xs font-semibold uppercase tracking-[0.14em] ${c.highlight ? "text-accent" : "text-muted-foreground"}`}>
               {c.region}
             </div>
-            <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-5xl font-bold tracking-tight">{c.rate}</span>
-              <span className={`text-sm ${c.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                {c.per}
-              </span>
+            <div className="mt-4 flex flex-wrap items-baseline gap-2">
+              <span className="text-4xl font-bold tracking-tight md:text-5xl">{c.rate}</span>
+              <span className={`text-sm ${c.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{c.per}</span>
             </div>
-            <p className={`mt-2 text-sm ${c.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-              {c.note}
-            </p>
+            <p className={`mt-2 text-sm ${c.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{c.note}</p>
 
             {c.highlight ? (
               <>
@@ -69,14 +61,14 @@ export const PricingComparison = () => (
                   ))}
                 </ul>
                 <Button asChild className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  <a href="#contact">Hire – starting from $25/hour</a>
+                  <a href="#contact">Hire developers at $25/hour</a>
                 </Button>
               </>
             ) : (
               <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
-                <li>· In-house overhead</li>
-                <li>· Long hiring cycles</li>
-                <li>· Limited flexibility</li>
+                <li>Long hiring cycles</li>
+                <li>Higher payroll overhead</li>
+                <li>Less flexibility for quick scaling</li>
               </ul>
             )}
           </div>
@@ -84,7 +76,7 @@ export const PricingComparison = () => (
       </div>
 
       <p className="mt-10 text-center text-sm text-muted-foreground">
-        Save up to <span className="font-semibold text-ink">80%</span> versus US/UK rates — same senior engineering.
+        Save up to <span className="font-semibold text-ink">80%</span> versus US and UK rates while keeping a strong engineering standard.
       </p>
     </ScrollReveal>
   </section>

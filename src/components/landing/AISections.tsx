@@ -6,48 +6,48 @@ export const AISections = () => (
   <section className="section-y border-b border-border">
     <ScrollReveal className="container-tight space-y-20 lg:space-y-28">
       <SectionHeading
-        eyebrow="AI & Machine Learning"
-        title="Practical AI. Real business impact."
-        description="Integrate AI into your products to automate processes and improve decision-making. We build real AI-powered features starting from $25 per hour."
+        eyebrow="AI and Machine Learning"
+        title="Practical AI capabilities with real business impact."
+        description="Startups, agencies, and enterprises are integrating AI to automate workflows, improve decisions, personalize experiences, and reduce operational workload. We focus on implementation, not theory."
       />
 
       <SplitSection
-        eyebrow="LLM Integration"
-        title="GPT and Gemini Integration."
-        description="Add intelligent capabilities to your platform using models like GPT and Gemini for chatbots, content generation, and smart search."
-        tags={["OpenAI", "Gemini", "Anthropic", "Vector DBs", "RAG"]}
+        eyebrow="LLM integration"
+        title="GPT, Gemini, and intelligent product features."
+        description="Add AI capabilities to your platform through reliable model integrations, prompt design, data workflows, and performance tuning."
+        tags={["OpenAI", "Gemini", "Vector DBs", "RAG", "Smart Search"]}
         bullets={[
-          "AI chatbots for advanced customer support",
-          "Automated content generation systems",
+          "AI chatbots for customer support and internal tools",
+          "Content generation systems and workflow automation",
           "Smart search and recommendation engines",
-          "Prompt optimization and performance tuning",
+          "Prompt optimization, API integration, and response tuning",
         ]}
       />
 
       <SplitSection
         reverse
-        eyebrow="AI Chatbots"
-        title="Custom AI-Powered Chatbots."
-        description="Tailored chatbots integrated with your website, CRM, or mobile app focusing on natural conversations and fast response times."
-        tags={["Support", "Sales", "CRM", "Multilingual"]}
+        eyebrow="Custom AI chatbots"
+        title="Conversation systems tailored to your workflows."
+        description="We create AI chatbots for support, sales, lead qualification, internal productivity, and multilingual communication, integrated with your website, CRM, or mobile app."
+        tags={["Support", "Sales", "CRM", "Multilingual", "Automation"]}
         bullets={[
-          "Customer support automation 24/7",
+          "Customer support automation",
           "Lead qualification and sales assistance",
           "Internal team productivity tools",
-          "Multilingual communication systems",
+          "Natural conversations with fast response times",
         ]}
       />
 
       <SplitSection
-        eyebrow="Predictive Analytics"
-        title="Data-Driven Predictive Models."
-        description="Analyze data and make informed decisions using Python-based frameworks to process large datasets efficiently."
+        eyebrow="Predictive analytics"
+        title="Turn product data into better decisions."
+        description="Our developers build data pipelines and predictive models that help teams forecast behavior, identify trends, and improve operations."
         tags={["Python", "Pandas", "scikit-learn", "Data Pipelines"]}
         bullets={[
           "Forecast demand and user behavior",
-          "Identify critical trends and patterns",
-          "Optimize pricing and operational workflows",
-          "Turn raw data into actionable insights",
+          "Identify trends and patterns",
+          "Optimize pricing and operations",
+          "Improve customer targeting and reporting",
         ]}
       />
     </ScrollReveal>

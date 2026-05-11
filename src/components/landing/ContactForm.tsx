@@ -24,15 +24,16 @@ export const ContactForm = () => {
       <div className="container-tight grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <SectionHeading
-            eyebrow="Get started"
+            eyebrow="Get Started"
             title="Tell us about your project."
-            description="Share a few details and we'll match you with developers within 24 hours. No commitment, no sales pressure."
+            description="Share your requirements and we will match you with the right developers based on technology, experience level, availability, and project goals."
           />
           <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
-            <li>· Senior engineers at $25/hour</li>
-            <li>· NDA signed before any disclosure</li>
-            <li>· Interview candidates before you commit</li>
-            <li>· Replace developers anytime</li>
+            <li>Senior engineers at $25/hour</li>
+            <li>NDA signed before sensitive disclosure</li>
+            <li>Review profiles and interview candidates</li>
+            <li>Start with one developer or a full remote team</li>
+            <li>Replace or scale developers based on project needs</li>
           </ul>
         </div>
 
@@ -52,12 +53,12 @@ export const ContactForm = () => {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="brief">Project brief</Label>
-              <Textarea id="brief" required rows={5} placeholder="What are you building? Tech stack, timeline, team needs…" />
+              <Textarea id="brief" required rows={5} placeholder="What are you building? Tech stack, timeline, team needs..." />
             </div>
             <Button type="submit" disabled={submitting} className="h-11 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-              {submitting ? "Sending…" : "Request developers"}
+              {submitting ? "Sending..." : "Get developer profiles"}
             </Button>
-            <p className="text-center text-xs text-muted-foreground">By submitting you agree to our NDA-first process. No spam, ever.</p>
+            <p className="text-center text-xs text-muted-foreground">By submitting, you agree to our NDA-first process. No spam.</p>
           </div>
         </form>
       </div>

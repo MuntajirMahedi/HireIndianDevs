@@ -5,14 +5,17 @@ import { WhyChooseUs } from "@/components/landing/WhyChooseUs";
 import { PricingComparison } from "@/components/landing/PricingComparison";
 import { ServicesOverview } from "@/components/landing/ServicesOverview";
 import { TechSections } from "@/components/landing/TechSections";
+import { TechnologyStack } from "@/components/landing/TechnologyStack";
 import { MobileSections } from "@/components/landing/MobileSections";
 import { ArchitectureSections } from "@/components/landing/ArchitectureSections";
 import { AISections } from "@/components/landing/AISections";
 import { PricingModels } from "@/components/landing/PricingModels";
 import { MVPProcess } from "@/components/landing/MVPProcess";
+import { DevelopmentProcess } from "@/components/landing/DevelopmentProcess";
 import { IndiaAdvantage } from "@/components/landing/IndiaAdvantage";
 import { QASecurity } from "@/components/landing/QASecurity";
 import { Industries } from "@/components/landing/Industries";
+import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
 import { ContactForm } from "@/components/landing/ContactForm";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -44,11 +47,14 @@ const Index = () => {
           <MobileSections />
           <ArchitectureSections />
           <AISections />
+          <TechnologyStack />
           <PricingModels />
           <MVPProcess />
+          <DevelopmentProcess />
           <IndiaAdvantage />
           <QASecurity />
           <Industries />
+          <Testimonials />
           <FAQ />
           <ContactForm />
           <FinalCTA />

@@ -1,32 +1,32 @@
-import { Clock, Users, Layers, Sparkles } from "lucide-react";
+import { Clock, Layers, Sparkles, Users } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { ScrollReveal } from "./ScrollReveal";
 
 const models = [
   {
     icon: Clock,
-    name: "Hourly Basis",
-    price: "From $25",
+    name: "Hourly Developers",
+    price: "$25",
     per: "/ hour",
-    description: "Ideal for projects with evolving requirements or ongoing updates.",
-    features: ["Pay only for actual work done", "Full flexibility to adjust scope", "Scale hours up or down", "Ideal for startups & maintenance"],
+    description: "Ideal for evolving requirements, maintenance, iterative product work, and ongoing updates.",
+    features: ["Pay only for actual work done", "Adjust scope as needs change", "Scale hours up or down", "Weekly or monthly reporting"],
   },
   {
     icon: Users,
     name: "Dedicated Resources",
-    price: "From $25",
+    price: "$25",
     per: "/ hour",
-    description: "Developers work exclusively on your project as dedicated team members.",
-    features: ["Full control over the process", "Consistent output & faster progress", "Deep product understanding", "Seamless team integration"],
+    description: "Developers work exclusively on your product as an extension of your in-house team.",
+    features: ["Full control over priorities", "Consistent output and faster progress", "Deep product understanding over time", "Full-time or part-time availability"],
     highlight: true,
   },
   {
     icon: Layers,
-    name: "Fixed Price Projects",
+    name: "Fixed-Price Projects",
     price: "Custom",
     per: "/ project",
-    description: "Best for clearly defined scopes like MVPs or specific modules.",
-    features: ["Clear cost estimate upfront", "Defined timelines & milestones", "Based on starting $25/hour rate", "No hidden costs or surprises"],
+    description: "Best for clearly defined scopes such as websites, MVPs, modules, and system upgrades.",
+    features: ["Clear estimate upfront", "Defined timelines and milestones", "Milestone-based payments", "Calculated from the $25/hour base rate"],
   },
 ];
 
@@ -34,9 +34,9 @@ export const PricingModels = () => (
   <section className="section-y border-b border-border bg-secondary/30">
     <ScrollReveal className="container-tight">
       <SectionHeading
-        eyebrow="Transparent Pricing"
-        title="Senior engineering. Fixed rates."
-        description="Starting from $25 per hour. No hidden fees or unpredictable timelines. Choose the model that fits your growth."
+        eyebrow="Transparent Pricing Models"
+        title="Flexible hiring without hidden costs or surprises."
+        description="Choose hourly developers, dedicated resources, or fixed-scope delivery. Every model is built for budget control, clear reporting, and predictable collaboration."
       />
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -60,7 +60,7 @@ export const PricingModels = () => (
               <span className="text-3xl font-bold text-ink">{m.price}</span>
               <span className="text-sm text-muted-foreground">{m.per}</span>
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">{m.description}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.description}</p>
             <ul className="mt-6 space-y-2 text-sm text-ink">
               {m.features.map((f) => (
                 <li key={f} className="flex items-start gap-2">

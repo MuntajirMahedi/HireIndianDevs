@@ -1,24 +1,48 @@
-import { Award, Zap, DollarSign, MessageSquare, Shield, TrendingUp } from "lucide-react";
+import { Award, DollarSign, MessageSquare, Shield, TrendingUp, Zap } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { FeatureCard } from "./FeatureCard";
 import { ScrollReveal } from "./ScrollReveal";
 
 const items = [
-  { icon: Award, title: "Senior-level engineers", description: "Experienced developers who build systems that are stable, fast, and ready for scale." },
-  { icon: MessageSquare, title: "Fluent English support", description: "Strong communication with clear documentation and seamless team integration." },
-  { icon: Zap, title: "Daily updates", description: "Structured project workflows with daily progress reports and transparent cycles." },
-  { icon: DollarSign, title: "Starting from $25/hour", description: "Senior-level quality at a fraction of the cost, making it easier to scale without overspending." },
-  { icon: Shield, title: "Clean, scalable code", description: "Clean, maintainable, and production-ready code emphasizing long-term product growth." },
-  { icon: TrendingUp, title: "Flexible hiring models", description: "Hourly, dedicated, or fixed-price models based on your specific project needs." },
+  {
+    icon: Award,
+    title: "Engineers who think beyond code",
+    description: "Work with developers who understand product goals, architecture, performance, and future scale.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Fluent English communication",
+    description: "Clear written updates, structured reporting, documentation, and smooth collaboration with global teams.",
+  },
+  {
+    icon: Zap,
+    title: "Daily progress visibility",
+    description: "Agile workflows, daily updates, sprint planning, and practical ownership from kickoff to launch.",
+  },
+  {
+    icon: DollarSign,
+    title: "$25 per hour pricing",
+    description: "Senior-level development support at a transparent rate that helps you scale without overspending.",
+  },
+  {
+    icon: Shield,
+    title: "Scalable, maintainable code",
+    description: "Clean architecture, code reviews, QA processes, and production-ready delivery for long-term growth.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Flexible hiring models",
+    description: "Hire hourly developers, dedicated resources, or fixed-scope teams based on your project needs.",
+  },
 ];
 
 export const WhyChooseUs = () => (
   <section className="section-y border-b border-border">
     <ScrollReveal className="container-tight">
       <SectionHeading
-        eyebrow="Why Us"
-        title="Quality, speed, and cost efficiency."
-        description="We offer senior-level developers starting from $25 per hour, designed to help you build and scale without compromise."
+        eyebrow="Why Choose Us"
+        title="Hire Indian developers who can take ownership."
+        description="Businesses choose us when they need reliable engineers who communicate clearly, integrate quickly, and build systems that support real business growth."
       />
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((i) => (

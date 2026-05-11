@@ -1,4 +1,12 @@
-const items = ["NDA Protected", "GDPR Ready", "Agile / Scrum", "24h Hiring", "IT Act 2000", "100% Code Ownership"];
+const items = [
+  "500+ Projects",
+  "10+ Years Experience",
+  "NDA Protected",
+  "GDPR Ready",
+  "Agile / Scrum",
+  "24-72h Hiring",
+  "100% Code Ownership",
+];
 
 export const TrustStrip = () => (
   <section className="border-b border-border bg-secondary/40">

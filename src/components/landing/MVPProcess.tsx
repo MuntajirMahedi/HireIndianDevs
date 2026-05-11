@@ -2,18 +2,18 @@ import { SectionHeading } from "./SectionHeading";
 import { ScrollReveal } from "./ScrollReveal";
 
 const steps = [
-  { week: "Week 1–2", title: "Requirement analysis", body: "Define core product idea, prioritize features, and plan scalable architecture." },
-  { week: "Week 3–5", title: "Core development", body: "Build the essential feature set first to identify most important functionality." },
-  { week: "Week 6–8", title: "Testing & deployment", body: "Rigorous testing across devices, optimization, and production launch." },
+  { week: "Week 1-2", title: "Requirement analysis", body: "Define the core product idea, prioritize user-value features, and plan a scalable foundation." },
+  { week: "Week 3-5", title: "Core development", body: "Build the essential feature set with clean frontend, backend, database, and API implementation." },
+  { week: "Week 6-8", title: "Testing and launch", body: "Run QA, optimize performance, deploy to production, and prepare the product for real users." },
 ];
 
 export const MVPProcess = () => (
-  <section id="process" className="section-y border-b border-border">
+  <section id="mvp" className="section-y border-b border-border">
     <ScrollReveal className="container-tight">
       <SectionHeading
-        eyebrow="30 to 60 Day MVP Launch"
-        title="Build lean. Launch fast. Scale smart."
-        description="Focused on building only what's necessary to go live and validate your idea, without wasting time or budget."
+        eyebrow="MVP Development"
+        title="Launch your MVP in 30 to 60 days."
+        description="Validate your idea faster with lean, scalable, cost-effective product development. We build only what is necessary to go live while keeping the architecture ready for future growth."
       />
 
       <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3">

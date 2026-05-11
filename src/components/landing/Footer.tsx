@@ -9,10 +9,12 @@ export const Footer = () => (
         <a href="#services" className="hover:text-ink">Services</a>
         <a href="#pricing" className="hover:text-ink">Pricing</a>
         <a href="#process" className="hover:text-ink">Process</a>
+        <a href="#technologies" className="hover:text-ink">Technologies</a>
+        <a href="#industries" className="hover:text-ink">Industries</a>
         <a href="#faq" className="hover:text-ink">FAQ</a>
         <a href="#contact" className="hover:text-ink">Contact</a>
       </nav>
-      <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} HireIndianDevs. All rights reserved.</p>
+      <p className="text-xs text-muted-foreground">Copyright {new Date().getFullYear()} HireIndianDevs. All rights reserved.</p>
     </div>
   </footer>
 );
