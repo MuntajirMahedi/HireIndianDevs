@@ -47,7 +47,7 @@ export const Nav = () => {
           <div className="flex items-center gap-3">
             <Button asChild className="hidden h-9 rounded-full bg-white px-5 text-[11px] font-bold text-ink hover:bg-white/90 md:inline-flex">
               <a href="#contact" className="flex items-center gap-2">
-                Hire at $25/hr
+                Start at $25/hr
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-ink text-white">
                   <ArrowUpRight className="h-3 w-3" />
                 </span>
@@ -81,7 +81,7 @@ export const Nav = () => {
             <div className="mt-2 border-t border-white/5 p-2">
               <Button asChild className="w-full rounded-2xl bg-white px-5 text-[11px] font-bold text-ink hover:bg-white/90">
                 <a href="#contact" onClick={() => setOpen(false)} className="flex items-center justify-center gap-2 py-6">
-                  Hire at $25/hr
+                  Start at $25/hr
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </Button>

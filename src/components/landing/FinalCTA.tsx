@@ -10,7 +10,7 @@ export const FinalCTA = () => (
       </h2>
       <p className="mx-auto mt-5 max-w-2xl text-base text-primary-foreground/70 md:text-lg">
         Whether you need one developer or a complete remote team, build, launch, scale, and support your product with
-        experienced engineers at $25 per hour.
+        experienced engineers with flexible pricing starting at $25/hour.
       </p>
       <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button asChild size="lg" className="h-12 bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90">

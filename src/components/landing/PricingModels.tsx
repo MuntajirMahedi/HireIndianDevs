@@ -6,7 +6,7 @@ const models = [
   {
     icon: Clock,
     name: "Hourly Developers",
-    price: "$25",
+    price: "From $25",
     per: "/ hour",
     description: "Ideal for evolving requirements, maintenance, iterative product work, and ongoing updates.",
     features: ["Pay only for actual work done", "Adjust scope as needs change", "Scale hours up or down", "Weekly or monthly reporting"],
@@ -14,7 +14,7 @@ const models = [
   {
     icon: Users,
     name: "Dedicated Resources",
-    price: "$25",
+    price: "From $25",
     per: "/ hour",
     description: "Developers work exclusively on your product as an extension of your in-house team.",
     features: ["Full control over priorities", "Consistent output and faster progress", "Deep product understanding over time", "Full-time or part-time availability"],
@@ -26,7 +26,7 @@ const models = [
     price: "Custom",
     per: "/ project",
     description: "Best for clearly defined scopes such as websites, MVPs, modules, and system upgrades.",
-    features: ["Clear estimate upfront", "Defined timelines and milestones", "Milestone-based payments", "Calculated from the $25/hour base rate"],
+    features: ["Clear estimate upfront", "Defined timelines and milestones", "Milestone-based payments", "Estimated from flexible starting rates"],
   },
 ];
 
@@ -35,8 +35,8 @@ export const PricingModels = () => (
     <ScrollReveal className="container-tight">
       <SectionHeading
         eyebrow="Transparent Pricing Models"
-        title="Flexible hiring without hidden costs or surprises."
-        description="Choose hourly developers, dedicated resources, or fixed-scope delivery. Every model is built for budget control, clear reporting, and predictable collaboration."
+        title="Flexible pricing starting at $25/hour."
+        description="Choose hourly developers, dedicated resources, or fixed-scope delivery. Every model is built for budget control, clear reporting, and predictable collaboration as your scope grows."
       />
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">

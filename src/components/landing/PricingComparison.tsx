@@ -6,7 +6,7 @@ import { ScrollReveal } from "./ScrollReveal";
 const cols = [
   { region: "United States", rate: "$80-$150", per: "per hour", note: "Typical senior developer market range", highlight: false },
   { region: "United Kingdom", rate: "$70-$120", per: "per hour", note: "Typical senior developer market range", highlight: false },
-  { region: "India - Our team", rate: "$25", per: "per hour", note: "Transparent rate for experienced engineers", highlight: true },
+  { region: "India - Our team", rate: "From $25", per: "per hour", note: "Flexible starting rate for experienced engineers", highlight: true },
 ];
 
 const features = [
@@ -23,7 +23,7 @@ export const PricingComparison = () => (
       <SectionHeading
         eyebrow="The $25 Per Hour Advantage"
         title="Build faster, scale smarter, and keep more budget for growth."
-        description="One of the biggest reasons companies hire Indian developers is the cost advantage without sacrificing quality. This is cost efficiency from India's operating model, not lower engineering standards."
+        description="One of the biggest reasons companies hire Indian developers is the cost advantage without sacrificing quality. Our flexible pricing starts at $25/hour and scales with project complexity, team size, and engagement model."
       />
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -61,7 +61,7 @@ export const PricingComparison = () => (
                   ))}
                 </ul>
                 <Button asChild className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  <a href="#contact">Hire developers at $25/hour</a>
+                  <a href="#contact">Hire developers starting at $25/hour</a>
                 </Button>
               </>
             ) : (
@@ -76,7 +76,7 @@ export const PricingComparison = () => (
       </div>
 
       <p className="mt-10 text-center text-sm text-muted-foreground">
-        Save up to <span className="font-semibold text-ink">80%</span> versus US and UK rates while keeping a strong engineering standard.
+        Build cost-effective remote teams with pricing that starts at <span className="font-semibold text-ink">$25/hour</span> and adapts to your delivery needs.
       </p>
     </ScrollReveal>
   </section>

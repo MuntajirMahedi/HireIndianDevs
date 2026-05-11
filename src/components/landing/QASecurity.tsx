@@ -18,7 +18,7 @@ export const QASecurity = () => (
       <SectionHeading
         eyebrow="Security and Quality"
         title="Enterprise-level QA, security, and confidentiality standards."
-        description="Quality and security are built into delivery from day one. At $25 per hour, you still get professional testing, secure development practices, and clear ownership protection."
+        description="Quality and security are built into delivery from day one. With flexible pricing starting at $25/hour, you still get professional testing, secure development practices, and clear ownership protection."
       />
       <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
         {items.map((i) => (

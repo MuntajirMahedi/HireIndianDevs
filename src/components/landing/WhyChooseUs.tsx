@@ -21,8 +21,8 @@ const items = [
   },
   {
     icon: DollarSign,
-    title: "$25 per hour pricing",
-    description: "Senior-level development support at a transparent rate that helps you scale without overspending.",
+    title: "Pricing starting at $25/hour",
+    description: "Flexible development support with starting rates designed to help you scale without overspending.",
   },
   {
     icon: Shield,

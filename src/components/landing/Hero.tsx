@@ -9,7 +9,7 @@ const proofPoints = [
 ];
 
 const stats = [
-  { k: "From $25", v: "per hour" },
+  { k: "$25/hr", v: "starting rate" },
   { k: "24-72h", v: "to onboard" },
   { k: "500+", v: "projects shipped" },
   { k: "4.9", v: "client rating", icon: true },
@@ -30,7 +30,7 @@ export const Hero = () => {
 
           <h1 className="animate-fade-up [animation-delay:100ms] text-display-lg text-ink md:text-display-xl">
             Hire Indian Developers for High-Performance{" "}
-            <span className="text-accent">Web, Mobile, AI, and SaaS Development</span> at $25 per Hour
+            <span className="text-accent">Web, Mobile, AI, and SaaS Development</span> Starting at $25/Hour
           </h1>
 
           <p className="animate-fade-up [animation-delay:200ms] mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
@@ -41,7 +41,7 @@ export const Hero = () => {
           <div className="animate-fade-up [animation-delay:300ms] mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90">
               <a href="#contact">
-                Hire Developers at $25/hr <ArrowRight className="ml-1 h-4 w-4" />
+                Build your team from $25/hr <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-12 border-border px-6 text-base text-ink">

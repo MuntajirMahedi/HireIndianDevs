@@ -14,7 +14,7 @@ export const TechSections = () => (
       <SplitSection
         eyebrow="End-to-end engineering"
         title="Applications built to perform in production."
-        description="At $25 per hour, you get developers who understand system design, clean code, testing, deployment, monitoring, and the real-world tradeoffs that shape reliable products."
+        description="With developers starting at $25/hour, you can access engineers who understand system design, clean code, testing, deployment, monitoring, and the real-world tradeoffs that shape reliable products."
         tags={["React", "Next.js", "Node.js", "Python", "Laravel", "PostgreSQL"]}
         bullets={[
           "Architecture planning and modular system design",

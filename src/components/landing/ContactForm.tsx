@@ -29,7 +29,7 @@ export const ContactForm = () => {
             description="Share your requirements and we will match you with the right developers based on technology, experience level, availability, and project goals."
           />
           <ul className="mt-8 space-y-3 text-sm text-muted-foreground">
-            <li>Senior engineers at $25/hour</li>
+            <li>Senior engineers starting at $25/hour</li>
             <li>NDA signed before sensitive disclosure</li>
             <li>Review profiles and interview candidates</li>
             <li>Start with one developer or a full remote team</li>
