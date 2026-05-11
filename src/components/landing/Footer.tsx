@@ -14,7 +14,7 @@ export const Footer = () => (
         <a href="#faq" className="hover:text-ink">FAQ</a>
         <a href="#contact" className="hover:text-ink">Contact</a>
       </nav>
-      <p className="text-xs text-muted-foreground">Copyright {new Date().getFullYear()} HireIndianDevs. All rights reserved.</p>
+      <p className="text-xs text-muted-foreground">Copyright {new Date().getFullYear()} HireIndianDevelopers. All rights reserved.</p>
     </div>
   </footer>
 );
