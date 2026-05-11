@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, User, Mail, Building2, MessageSquare, Settings, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -70,7 +70,7 @@ export const LeadForm = ({
   compact = false,
   source = "Landing contact form",
   submitLabel = "Get developer profiles",
-  trustText = "By submitting, you agree to our NDA-first process. No spam.",
+  trustText = "By submitting, you agree to our NDA-first process.",
 }: LeadFormProps) => {
   const formId = source.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   const [values, setValues] = useState<LeadFormValues>(initialValues);
@@ -128,98 +128,118 @@ export const LeadForm = ({
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className={cn("rounded-lg border border-border bg-card p-6 md:p-8", className)}>
-      <div className={cn("grid", compact ? "gap-3.5" : "gap-5")}>
+    <form onSubmit={onSubmit} noValidate className={cn("rounded-3xl border border-border bg-card p-6 md:p-8 shadow-xl", className)}>
+      <div className={cn("grid", compact ? "gap-4" : "gap-6")}>
         <div className="grid gap-2">
-          <Label htmlFor={`${formId}-name`}>Name</Label>
-          <Input
-            id={`${formId}-name`}
-            name="name"
-            required
-            value={values.name}
-            onChange={(e) => updateValue("name", e.target.value)}
-            placeholder="Your full name"
-            autoComplete="name"
-            disabled={submitting}
-            className={compact ? "h-10 text-sm" : undefined}
-          />
+          <Label htmlFor={`${formId}-name`} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Full Name</Label>
+          <div className="relative">
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
+            <Input
+              id={`${formId}-name`}
+              name="name"
+              required
+              value={values.name}
+              onChange={(e) => updateValue("name", e.target.value)}
+              placeholder="e.g. John Doe"
+              autoComplete="name"
+              disabled={submitting}
+              className={cn("pl-10 rounded-xl border-border bg-background/50 focus:bg-background transition-all", compact ? "h-11 text-sm" : "h-12")}
+            />
+          </div>
         </div>
+
         <div className="grid gap-2">
-          <Label htmlFor={`${formId}-email`}>Work email</Label>
-          <Input
-            id={`${formId}-email`}
-            name="email"
-            type="email"
-            required
-            value={values.email}
-            onChange={(e) => updateValue("email", e.target.value)}
-            placeholder="you@company.com"
-            autoComplete="email"
-            disabled={submitting}
-            className={compact ? "h-10 text-sm" : undefined}
-          />
+          <Label htmlFor={`${formId}-email`} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Work Email</Label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
+            <Input
+              id={`${formId}-email`}
+              name="email"
+              type="email"
+              required
+              value={values.email}
+              onChange={(e) => updateValue("email", e.target.value)}
+              placeholder="e.g. john@company.com"
+              autoComplete="email"
+              disabled={submitting}
+              className={cn("pl-10 rounded-xl border-border bg-background/50 focus:bg-background transition-all", compact ? "h-11 text-sm" : "h-12")}
+            />
+          </div>
         </div>
+
         <div className="grid gap-2">
-          <Label htmlFor={`${formId}-company`}>Company</Label>
-          <Input
-            id={`${formId}-company`}
-            name="company"
-            value={values.company}
-            onChange={(e) => updateValue("company", e.target.value)}
-            placeholder="Company name (optional)"
-            autoComplete="organization"
-            disabled={submitting}
-            className={compact ? "h-10 text-sm" : undefined}
-          />
+          <Label htmlFor={`${formId}-company`} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Company Name</Label>
+          <div className="relative">
+            <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
+            <Input
+              id={`${formId}-company`}
+              name="company"
+              value={values.company}
+              onChange={(e) => updateValue("company", e.target.value)}
+              placeholder="e.g. Acme Inc (Optional)"
+              autoComplete="organization"
+              disabled={submitting}
+              className={cn("pl-10 rounded-xl border-border bg-background/50 focus:bg-background transition-all", compact ? "h-11 text-sm" : "h-12")}
+            />
+          </div>
         </div>
+
         <div className="grid gap-2">
-          <Label htmlFor={`${formId}-service`}>Service Required</Label>
-          <Select
-            value={values.service}
-            onValueChange={(value) => updateValue("service", value)}
-            disabled={submitting}
-          >
-            <SelectTrigger
-              id={`${formId}-service`}
-              className={cn(
-                "w-full bg-background border-border",
-                compact ? "h-10 text-sm" : "h-11",
-                !values.service && "text-muted-foreground"
-              )}
+          <Label htmlFor={`${formId}-service`} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Service Required</Label>
+          <div className="relative">
+            <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50 z-10" />
+            <Select
+              value={values.service}
+              onValueChange={(value) => updateValue("service", value)}
+              disabled={submitting}
             >
-              <SelectValue placeholder="Select a service" />
-            </SelectTrigger>
-            <SelectContent className="bg-card border-border">
-              {services.map((service) => (
-                <SelectItem key={service} value={service} className="focus:bg-accent focus:text-accent-foreground cursor-pointer">
-                  {service}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+              <SelectTrigger
+                id={`${formId}-service`}
+                className={cn(
+                  "pl-10 rounded-xl border-border bg-background/50 focus:bg-background transition-all",
+                  compact ? "h-11 text-sm" : "h-12",
+                  !values.service && "text-muted-foreground"
+                )}
+              >
+                <SelectValue placeholder="Select a service" />
+              </SelectTrigger>
+              <SelectContent className="bg-card border-border rounded-xl shadow-2xl">
+                {services.map((service) => (
+                  <SelectItem key={service} value={service} className="focus:bg-accent focus:text-accent-foreground cursor-pointer rounded-lg mx-1 my-0.5">
+                    {service}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
+
         <div className="grid gap-2">
-          <Label htmlFor={`${formId}-message`}>Project brief</Label>
-          <Textarea
-            id={`${formId}-message`}
-            name="message"
-            required
-            rows={compact ? 3 : 5}
-            value={values.message}
-            onChange={(e) => updateValue("message", e.target.value)}
-            placeholder="What are you building? Tech stack, timeline, team needs..."
-            disabled={submitting}
-          />
+          <Label htmlFor={`${formId}-message`} className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Project Brief</Label>
+          <div className="relative">
+            <MessageSquare className="absolute left-3 top-4 h-4 w-4 text-muted-foreground/50" />
+            <Textarea
+              id={`${formId}-message`}
+              name="message"
+              required
+              rows={compact ? 3 : 4}
+              value={values.message}
+              onChange={(e) => updateValue("message", e.target.value)}
+              placeholder="Tell us about your project, tech stack, and goals..."
+              disabled={submitting}
+              className="pl-10 rounded-xl border-border bg-background/50 focus:bg-background transition-all resize-none"
+            />
+          </div>
         </div>
 
         {formMessage && (
           <div
-            className={`rounded-md border px-4 py-3 text-sm leading-relaxed ${
+            className={cn(
+              "rounded-xl border px-4 py-3 text-[13px] font-medium leading-relaxed animate-in fade-in zoom-in-95",
               formMessage.type === "success"
-                ? "border-accent/20 bg-accent/5 text-ink"
+                ? "border-emerald-500/20 bg-emerald-500/5 text-emerald-700"
                 : "border-destructive/20 bg-destructive/5 text-destructive"
-            }`}
-            role={formMessage.type === "error" ? "alert" : "status"}
+            )}
           >
             {formMessage.text}
           </div>
@@ -228,18 +248,21 @@ export const LeadForm = ({
         <Button
           type="submit"
           disabled={submitting}
-          className={cn("w-full bg-accent text-accent-foreground hover:bg-accent/90", compact ? "h-10" : "h-11")}
+          className={cn("w-full rounded-xl bg-accent text-white font-bold tracking-tight shadow-lg shadow-accent/20 hover:bg-accent/90 transition-all hover:scale-[1.01] active:scale-[0.99]", compact ? "h-12" : "h-14")}
         >
           {submitting ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Sending request...
-            </>
+            <div className="flex items-center gap-2">
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Processing...
+            </div>
           ) : (
-            submitLabel
+            <div className="flex items-center gap-2">
+              {submitLabel}
+              <ArrowRight className="h-4 w-4" />
+            </div>
           )}
         </Button>
-        <p className="text-center text-xs text-muted-foreground">{trustText}</p>
+        <p className="text-center text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground/60">{trustText}</p>
       </div>
     </form>
   );
