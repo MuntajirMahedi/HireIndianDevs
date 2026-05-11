@@ -107,4 +107,18 @@
   .border-hairline {
     border-color: hsl(var(--border));
   }
+  .marquee-ltr {
+    animation: marquee-ltr 28s linear infinite;
+    transform: translateX(-50%);
+    will-change: transform;
+  }
+}
+
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
