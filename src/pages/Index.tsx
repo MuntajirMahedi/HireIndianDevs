@@ -24,11 +24,11 @@ import { MotionReveal } from "@/components/landing/MotionReveal.tsx";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background overflow-x-hidden">
       {/* Global grid background */}
       <div 
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]"
+        className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] overflow-hidden"
         style={{
           backgroundImage:
             "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
@@ -36,7 +36,7 @@ const Index = () => {
         }}
       />
       
-      <div className="relative z-10">
+      <div className="relative z-10 overflow-x-hidden">
         <Nav />
         <main>
           {/* Section 1: Hero - Fade + Upward reveal (as requested in flow) */}
